@@ -1,0 +1,10 @@
+1. Set up react
+2. Create routes to Instructions, about and home
+3. implement redux
+define components
+4. list actions
+5. develop reducers
+6. build store
+7. connect to app
+
+
