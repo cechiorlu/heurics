@@ -1,0 +1,1 @@
+All fonts were gotten from https://fontawesome.com/icons
