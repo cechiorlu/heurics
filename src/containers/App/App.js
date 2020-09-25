@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Header from '../components/Header'
-import Instructions from '../components/pages/Instructions'
-import Home from '../components/pages/Home'
-import About from '../components/pages/Instructions'
+import Header from '../../components/Header/Header'
+import Instructions from '../../components/pages/Instructions/Instructions'
+import Home from '../../components/pages/Home/Home'
+import About from '../../components/pages/About/About'
 import './App.css'
 
 

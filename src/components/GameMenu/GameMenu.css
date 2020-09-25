@@ -1,0 +1,64 @@
+.menu{
+    color: #edf0f1;
+    margin: 25px 0 0;
+    height: calc(100vh - 500px);
+}
+
+.game_options{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.treasure_hunt{
+    width: 200px;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.treasure_hunt_img{
+    background-color: rgba(0, 0, 0, 0);
+    width: 200px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.35s ease 0s;
+    color: rgba(0, 0, 0, 0);
+}
+
+.treasure_hunt_img:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #edf0f1;
+}
+
+.cross_chickens{
+    width: 200px;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cross_chickens_img{
+    background-color: rgba(0, 0, 0, 0);
+    width: 200px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.35s ease 0s;
+    color: rgba(0, 0, 0, 0);
+}
+
+.cross_chickens_img:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #edf0f1;
+}

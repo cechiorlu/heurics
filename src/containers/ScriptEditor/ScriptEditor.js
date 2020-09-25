@@ -1,4 +1,5 @@
 import React from 'react'
+import './ScriptEditor.css'
 
 const ScriptEditor = () => {
     return (

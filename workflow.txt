@@ -2,6 +2,36 @@
 2. Create routes to Instructions, about and home
 3. implement redux
 define components
+
+Brainstorm -----------------
+The scripts
+
+Script (arrows/directions) as component:
+ switch(location):
+  case toolbox:
+    normal view
+
+  case picked (trnsition)
+    view - box with solid black border
+
+  case workbench (scriptEditor)
+    view - rectangular bar
+
+
+Script (func & repeat) as component:
+ switch(location):
+  case toolbox:
+   same
+  case picked:
+   rectangular bar with a bottom hook
+  case workbench:
+    some logic required. length of hook has to match the quantity of arrows
+   
+
+
+
+you might have to remove volume and if (?)
+
 4. list actions
 5. develop reducers
 6. build store

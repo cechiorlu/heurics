@@ -1,0 +1,8 @@
+.workspace{
+    background-color: #DEB887;
+    width: 50%;
+    height: calc(100vh - 95px);
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5), inset 5px 5px 8px rgba(0,0,0,0.5);
+    cursor: grab;    
+}

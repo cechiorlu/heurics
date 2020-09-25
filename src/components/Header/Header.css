@@ -1,0 +1,19 @@
+.header{
+    padding: 10px 25px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navlist{
+    padding: 25px;
+    margin-left: 50px;
+}
+
+.nav-link{
+    transition: "all 0.39s ease 0s";
+    color: #edf0f1;
+}
+
+.nav-link:hover{
+color: #5f9ea0;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
-import GreenFlag from '../icons/green-flag.svg'
-import RedFlag from '../icons/red-flag.svg'
+import GreenFlag from '../../assets/icons/green-flag.svg'
+import RedFlag from '../../assets/icons/red-flag.svg'
+import './Canvas.css'
 
 const Canvas = () => {
     return (

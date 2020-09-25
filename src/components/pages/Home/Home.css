@@ -1,0 +1,10 @@
+.container{
+    min-width: 1000px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.wrapper{
+    width: 40%;
+}

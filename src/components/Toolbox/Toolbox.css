@@ -1,0 +1,32 @@
+.toolbox{
+    width: 100px;
+    height: calc(100vh - 95px);
+    background-color: rgb(25, 124, 155);
+    margin:0 40px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.toolbox_item{
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fas{
+    font-family: 'Roboto', sans-serif;
+    cursor: grab;
+    width: 22px;
+    height: 25px;
+}
+
+.braces {
+    font-weight: 900;
+    font-size: 22px;
+    color: #008000;
+    width: 25px;
+
+}

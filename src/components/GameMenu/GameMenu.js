@@ -1,6 +1,7 @@
 import React from 'react'
-import Map from '../images/treasure_map.jpg'
-import Chickens from '../images/chickens.png'
+import Map from '../../assets/images/treasure_map.jpg'
+import Chickens from '../../assets/images/chickens.png'
+import './GameMenu.css'
 
 
 const GameMenu = () => {
