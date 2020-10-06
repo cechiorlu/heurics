@@ -11,7 +11,7 @@ const GameMenu = () => {
             <div className="game_options">
                 <div
                     className="treasure_hunt"
-                    style={{ backgroundImage: `url(${Map})` }}>
+                    style={{ backgroundImage: `url(${Map})`, maxWidth: '100%', height: 'auto' }}>
                     <div
                         className="treasure_hunt_img">
                         <h4>Treasure Hunt</h4>
@@ -19,7 +19,7 @@ const GameMenu = () => {
                 </div>
                 <div
                     className="cross_chickens"
-                    style={{ backgroundImage: `url(${Chickens})` }}>
+                    style={{ backgroundImage: `url(${Chickens})`, maxWidth: '100%', height: 'auto' }}>
                     <div className="cross_chickens_img">
                         <h4>Cross the Chickens</h4>
                     </div>

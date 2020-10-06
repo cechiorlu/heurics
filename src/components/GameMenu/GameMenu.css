@@ -1,12 +1,12 @@
 .menu{
     color: #edf0f1;
     margin: 25px 0 0;
-    height: calc(100vh - 500px);
+    height: auto;
 }
 
 .game_options{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 15px;
 }
 
