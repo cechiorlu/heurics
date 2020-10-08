@@ -10,7 +10,7 @@ const Canvas = () => {
                 <img src={GreenFlag} alt="start" className="flag green" />
                 <img src={RedFlag} alt="stop" className="flag red" />
             </div>
-            <div class="canvas_grid"></div>
+            <div className="canvas_grid"></div>
         </div>
     )
 }
