@@ -1,12 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import './Header.css'
+import logo from '../../assets/images/logo-negative.png'
 
 
 const Header = () => {
     return (
         <div className="header">
-            <h1>Heurics</h1>
+            <div>
+                <img src={logo} id="logo" alt="Heurics"></img>
+            </div>
             <div className="navlist">
                 <Router>
                     <Link className="nav-link" style={styles} to="/instructions">Instructions</Link>

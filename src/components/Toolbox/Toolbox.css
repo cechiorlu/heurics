@@ -17,16 +17,6 @@
 }
 
 .fas{
-    font-family: 'Roboto', sans-serif;
-    cursor: grab;
     width: 22px;
     height: 25px;
-}
-
-.braces {
-    font-weight: 900;
-    font-size: 22px;
-    color: #008000;
-    width: 25px;
-
 }
