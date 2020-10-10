@@ -3,10 +3,10 @@
 </p>
 <h1 align="center">Game</h1>
 
-built with [`React`](https://facebook.github.io/react/) [![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
+built with [`React`](https://facebook.github.io/react/) ![npm version](https://badge.fury.io/js/react.svg)
 
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 
 
 <div id="TOC">
