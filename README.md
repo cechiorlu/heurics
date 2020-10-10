@@ -3,7 +3,11 @@
 </p>
 <h1 align="center">Game</h1>
 
-built with [`React`](https://facebook.github.io/react/)
+built with [`React`](https://facebook.github.io/react/) [![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
+
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 
 <div id="TOC">
     <ul>
@@ -57,7 +61,7 @@ built with [`React`](https://facebook.github.io/react/)
         <a href="#TOC"> Contributing :gear:</a>
     </h2>
     <p>
-      Heurics is open sourced and welcomes contributions from everyone. See <a href=".docs/CONTRIBUTING.md">CONTRIBUTING</a> for more details
+      Heurics is open sourced and welcomes contributions from everyone. See <a href="./docs/CONTRIBUTING.md">CONTRIBUTING</a> for more details
     </p>
 </div>
 <div id="code-of-conduct">
@@ -66,7 +70,7 @@ built with [`React`](https://facebook.github.io/react/)
     </h2>
     <p>
       As a community, we have rules and regulations which members abide by to ensure heurics remains a safe space for contributors.
-     Read up <a href=".docs/CODE OF CONDUCT.md">CODE OF CONDUCT</a> before making any contributions to this project.
+     Read up <a href=".CODE_OF_CONDUCT.md">CODE OF CONDUCT</a> before making any contributions to this project.
     </p>
 </div>
 <div id="Author">
