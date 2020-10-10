@@ -70,7 +70,7 @@ built with [`React`](https://facebook.github.io/react/) ![npm version](https://b
     </h2>
     <p>
       As a community, we have rules and regulations which members abide by to ensure heurics remains a safe space for contributors.
-     Read up <a href=".CODE_OF_CONDUCT.md">CODE OF CONDUCT</a> before making any contributions to this project.
+     Read up <a href="./CODE_OF_CONDUCT.md">CODE OF CONDUCT</a> before making any contributions to this project.
     </p>
 </div>
 <div id="Author">
