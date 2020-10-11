@@ -37,7 +37,7 @@ built with [`React`](https://facebook.github.io/react/) ![npm version](https://b
   </h2>
   <p>
     Heurics is a web application that allows children between the ages of 5 and 11 develop problem solving skills while playing immersive games.       These games teach basic principles of programming logic such as loops and functions. Heurics is inspired by MIT's 
-    ['Scratch'](https://scratch.mit.edu/) project
+    <a href="https://scratch.mit.edu">Scratch project</a>
   </p>
 </div>
 <div id="Documentation">
