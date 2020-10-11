@@ -22,3 +22,13 @@
     background-color: #2c3e50;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
+
+.workbench-item {
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    padding: 7.5px 0;
+    background-color:whitesmoke;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
