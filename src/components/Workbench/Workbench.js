@@ -1,23 +1,50 @@
 import React from 'react'
 import './Workbench.css'
 import Controls from '../Controls/Controls';
-import { Droppable } from 'react-beautiful-dnd'
+import BraceTool from './BraceTool/BraceTool';
 
-const Workbench = (props) => {
+const Workbench = ({ data, dispatch }) => {
+
+    const handleDragEnter = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.dropDepth + 1 })
+    };
+
+    const handleDragLeave = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.dropDepth - 1 });
+        if (data.dropDepth > 0) return
+        dispatch({ type: 'SET_IN_DROP_ZONE', inDropZone: false })
+    };
+
+    const handleDragOver = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.dataTransfer.dropEffect = 'copy';
+        dispatch({ type: 'SET_IN_DROP_ZONE', inDropZone: true });
+    };
+
+    const handleDrop = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const data = e.dataTransfer.getData("application/json")
+        console.log(data)
+    };
+
     return (
-        <Droppable droppableId="workbench-col">
-            {provided => {
-                return (
-                    <div
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        className="workbench">
+        <div className="workbench"
+            onDrop={e => handleDrop(e)}
+            onDragOver={e => handleDragOver(e)}
+            onDragEnter={e => handleDragEnter(e)}
+            onDragLeave={e => handleDragLeave(e)}>
 
-                        <Controls controls={props.controls} location="workbench" />
-                    </div>
-                )
-            }}
-        </Droppable>
+            <Controls controls={data.benchControls} location="workbench" />
+            <BraceTool>
+                <Controls controls={data.braceControls} location="workbench-brace" />
+            </BraceTool>
+        </div>
     )
 }
 

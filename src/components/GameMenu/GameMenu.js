@@ -5,23 +5,36 @@ import './GameMenu.css'
 
 
 const GameMenu = () => {
+
+    function handleGameOption(e){
+        console.log(e.target.className)
+        if(e.target.classList.contains('option_1')){
+            alert('Treasure Hunt')
+        }
+        if(e.target.classList.contains('option_2')){
+            alert('Cross the Chickens')
+        }
+    }
+
     return (
         <div className="menu">
             <h3>Choose an adventure:</h3>
             <div className="game_options">
                 <div
                     className="treasure_hunt"
-                    style={{ backgroundImage: `url(${Map})`, maxWidth: '100%', height: 'auto' }}>
+                    onClick = {(e) => handleGameOption(e)}
+                    style={{ backgroundImage: `url(${Map})`, height: 'auto' }}>
                     <div
-                        className="treasure_hunt_img">
-                        <h4>Treasure Hunt</h4>
+                        className="treasure_hunt_img option_1">
+                        <h4 className="option_1">Treasure Hunt</h4>
                     </div>
                 </div>
                 <div
                     className="cross_chickens"
-                    style={{ backgroundImage: `url(${Chickens})`, maxWidth: '100%', height: 'auto' }}>
-                    <div className="cross_chickens_img">
-                        <h4>Cross the Chickens</h4>
+                    onClick ={(e) => handleGameOption(e)}
+                    style={{ backgroundImage: `url(${Chickens})`, height: 'auto' }}>
+                    <div className="cross_chickens_img option_2">
+                        <h4 className="option_2">Cross the Chickens</h4>
                     </div>
                 </div>
             </div>

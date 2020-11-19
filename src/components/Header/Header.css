@@ -1,12 +1,21 @@
-.header{
-    padding: 10px 90px 0;
+.header-wrap{
+    width: 90%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header{
+    width: 40%;
+    margin: 30px 70px;
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
 }
 
 .navlist{
-    padding: 15px 25px 25px 25px;
-    margin-left: 50px;
+    padding-left: 25px;
+    margin-left: auto;
 }
 
 .nav-link{
@@ -19,7 +28,11 @@
 }
 
 #logo {
-    cursor: pointer; 
-    width: 134px;
-    height: 50px;
+    width: 120.6px;
+    height: 45px;
+}
+
+.settings{
+    position: absolute;
+    right: calc(100vw - (70px + 90vw));
 }

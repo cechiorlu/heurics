@@ -1,33 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import _ from 'lodash'
-import { Draggable } from 'react-beautiful-dnd';
 import './Controls.css'
 
 
-
 function Controls(props) {
-
-    let count = -1;
+    const handleDragStart = (e, data) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(e.target.parentElement.parentElement.parentElement)
+    }
 
     return (
         <div className="controls">
             {_.map(props.controls, (data, key) => {
-                ++count
                 return (
-                    < Draggable key={key} index={count} draggableId={`${props.location}-${data.id}`} >
-                        {(provided, snapshot) => {
-                            return (
-                                <div
-                                    className={`${props.location}-item`}
-                                    ref={provided.innerRef}
-                                    {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                >
-                                    <img alt='' src={data.icon} className="fas" />
-                                </div>
-                            )
-                        }}
-                    </Draggable>
+                    <img alt='' src={data.icon} 
+                    className={`${props.location}-item`} 
+                    key={key} draggable= {true} 
+                    onDragStart={e => handleDragStart(e, data)} />
                 )
             })}
         </div >

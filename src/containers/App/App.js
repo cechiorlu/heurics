@@ -10,14 +10,12 @@ import './App.css'
 export class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <Router>
         <Header />
-        <Router>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/instructions" component={Instructions} />
-        </Router>
-      </React.Fragment>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/instructions" component={Instructions} />
+      </Router>
     )
   }
 }

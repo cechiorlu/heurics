@@ -1,20 +1,26 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Sound from './Sound/Sound.js'
 import './Header.css'
 import logo from '../../assets/images/logo-negative.png'
 
 
 const Header = () => {
     return (
-        <div className="header">
-            <div>
-                <img src={logo} id="logo" alt="Heurics"></img>
-            </div>
-            <div className="navlist">
-                <Router>
+        <div className="header-wrap">
+            <div className="header">
+                <Link to="/">
+                    <div>
+                        <img src={logo} id="logo" alt="Heurics"></img>
+                    </div>
+                </Link>
+                <div className="navlist">
                     <Link className="nav-link" style={styles} to="/instructions">Instructions</Link>
                     <Link className="nav-link" style={styles} to="/about">About</Link>
-                </Router>
+                </div>
+            </div>
+            <div className="settings">
+                <Sound />
             </div>
         </div>
     )
@@ -22,7 +28,7 @@ const Header = () => {
 
 const styles = {
     textDecoration: "none",
-    fontSize: "18px",
+    fontSize: "16px",
     padding: "0px 20px"
 }
 

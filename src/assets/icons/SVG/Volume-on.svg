@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .a {
+        fill: #eef0f1;
+      }
+    </style>
+  </defs>
+  <title>Volume-on</title>
+  <g>
+    <polygon class="a" points="137.5 50 77.5 95 37.5 95 37.5 155 77.5 155 137.5 200 137.5 50"/>
+    <path class="a" d="M152.5,51.5V66.9a60,60,0,0,1,0,116.2v15.4a75,75,0,0,0,0-147Z"/>
+    <path class="a" d="M152.5,82.57V99a30,30,0,0,1,0,51.94v16.46a45,45,0,0,0,0-84.86Z"/>
+  </g>
+</svg>
