@@ -13,7 +13,7 @@ function Sound() {
                 onClick={() => setSound(!sound)}
                 className="sound-icon" alt="music"
             />
-            <audio loop={true} autoPlay={true} muted={sound ? false : true}>
+            <audio loop={true} autoPlay={false} muted={sound ? false : true}>
                 <source src={GameMusic} type="audio/mp3" />
             </audio>
         </>

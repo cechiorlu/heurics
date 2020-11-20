@@ -1,6 +1,6 @@
 import React from 'react'
 import './Workbench.css'
-import Controls from '../Controls/Controls';
+import Controls from './BenchControls/BenchControls';
 import BraceTool from './BraceTool/BraceTool';
 
 const Workbench = ({ data, dispatch }) => {
@@ -8,29 +8,32 @@ const Workbench = ({ data, dispatch }) => {
     const handleDragEnter = e => {
         e.preventDefault();
         e.stopPropagation();
-        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.dropDepth + 1 })
+        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.toolboxControls[data.dragId].dropDepth + 1 })
     };
 
     const handleDragLeave = e => {
         e.preventDefault();
         e.stopPropagation();
-        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.dropDepth - 1 });
-        if (data.dropDepth > 0) return
+        dispatch({ type: 'SET_DROP_DEPTH', dropDepth: data.toolboxControls[data.dragId].dropDepth - 1 })
+        if (data.toolboxControls[data.dragId].dropDepth > 0) return
         dispatch({ type: 'SET_IN_DROP_ZONE', inDropZone: false })
     };
 
     const handleDragOver = e => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = 'copy';
-        dispatch({ type: 'SET_IN_DROP_ZONE', inDropZone: true });
+        dispatch({ type: 'SET_IN_DROP_ZONE', inDropZone: true })
     };
+
 
     const handleDrop = e => {
         e.preventDefault();
         e.stopPropagation();
-        const data = e.dataTransfer.getData("application/json")
-        console.log(data)
+        const dropItem = e.dataTransfer.getData('text')
+        const ctrlItem = data.toolboxControls[dropItem]        
+        dispatch({type: 'SET_BENCH_CONTROLS', benchControls: [...data.benchControls, ctrlItem]})
+        e.dataTransfer.clearData();
+        console.log(data.benchControls)
     };
 
     return (

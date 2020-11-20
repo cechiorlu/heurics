@@ -1,11 +1,12 @@
 import React from 'react';
 import './Toolbox.css';
-import Controls from '../Controls/Controls';
+import Controls from './ToolboxControls/ToolboxControls';
 
-const Toolbox = (props) => {
+const Toolbox = ({ controls, dispatch }) => {
+   
     return (
         <div className="toolbox">
-            <Controls controls={props.controls} location="toolbox" />
+            <Controls controls={controls} location="toolbox" dispatch={dispatch}/>
         </div >
     )
 }
