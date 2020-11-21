@@ -8,7 +8,6 @@ import ArrowRight from '../../assets/icons/SVG/Right.svg'
 import Loop from '../../assets/icons/SVG/Arrow.svg'
 import Braces from '../../assets/icons/SVG/Bracket.svg'
 import Workbench from '../../components/Workbench/Workbench'
-import _ from 'lodash'
 
 const initialState = {
     dragId: '',
@@ -42,16 +41,16 @@ const initialState = {
             dropDepth: 0,
             inDropZone: false
         },
-        loop: {
-            icon: Loop,
-            id: 'loop',
-            function: true,
-            dropDepth: 0,
-            inDropZone: false
-        },
         braces: {
             icon: Braces,
             id: 'braces',
+            function: false,
+            dropDepth: 0,
+            inDropZone: false
+        },
+        loop: {
+            icon: Loop,
+            id: 'loop',
             function: true,
             dropDepth: 0,
             inDropZone: false
@@ -91,10 +90,10 @@ const ScriptEditor = () => {
     //     }
     // })
 
-    const benchControls = state.benchControls
-    const braceControls = state.braceControls
+    // const benchControls = state.benchControls
+    // const braceControls = state.braceControls
 
-    const script = { benchControls, braceControls }
+    // const script = { benchControls, braceControls }
 
     /****************************************************************************
      * benchControls filters from initialState all the controls that have been

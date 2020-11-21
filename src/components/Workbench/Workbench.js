@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Workbench.css'
 import Controls from './BenchControls/BenchControls';
 import BraceTool from './BraceTool/BraceTool';
+import LimitModal from './ControlLimitModal/ControlLimitModal'
 
 const Workbench = ({ data, dispatch }) => {
+
+    //Control-limit modal
+    const [modalOpen, setModalOpen] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setModalOpen(false)
+        }, 2000)
+        return () => clearTimeout(timer);
+    }, [modalOpen]);
 
     const handleDragEnter = e => {
         e.preventDefault();
@@ -30,24 +41,37 @@ const Workbench = ({ data, dispatch }) => {
         e.preventDefault();
         e.stopPropagation();
         const dropItem = e.dataTransfer.getData('text')
-        const ctrlItem = data.toolboxControls[dropItem]        
-        dispatch({type: 'SET_BENCH_CONTROLS', benchControls: [...data.benchControls, ctrlItem]})
+        const ctrlItem = data.toolboxControls[dropItem]
+        if (!ctrlItem.function) {
+            if (data.benchControls.length < 10) {
+                dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: [...data.benchControls, ctrlItem] })
+            } 
+            else {
+                // alert('Try using loops and braces')
+                setModalOpen(true)
+            }
+        } 
+        else {
+            alert('this is where you draw the function wrap')
+        }
         e.dataTransfer.clearData();
-        console.log(data.benchControls)
     };
 
     return (
-        <div className="workbench"
-            onDrop={e => handleDrop(e)}
-            onDragOver={e => handleDragOver(e)}
-            onDragEnter={e => handleDragEnter(e)}
-            onDragLeave={e => handleDragLeave(e)}>
+        <>
+            <div className="workbench"
+                onDrop={e => handleDrop(e)}
+                onDragOver={e => handleDragOver(e)}
+                onDragEnter={e => handleDragEnter(e)}
+                onDragLeave={e => handleDragLeave(e)}>
 
-            <Controls controls={data.benchControls} location="workbench" />
-            <BraceTool>
-                <Controls controls={data.braceControls} location="workbench-brace" />
-            </BraceTool>
-        </div>
+                <Controls controls={data.benchControls} location="workbench" />
+                <BraceTool>
+                    <Controls controls={data.braceControls} location="workbench-brace" />
+                </BraceTool>
+            </div>
+            <LimitModal isOpen={modalOpen} />
+        </>
     )
 }
 
