@@ -1,0 +1,17 @@
+.bench-controls {
+    height: inherit;
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workbench-item {
+    width: 120px;
+    height: 40px;
+    padding: 7.5px 0;
+    background-color:whitesmoke;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+}

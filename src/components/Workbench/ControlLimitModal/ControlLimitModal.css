@@ -1,0 +1,28 @@
+.control-limit-modal{
+    position: fixed;
+    width: 30%;
+    height: 40%;
+    background-color: white;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.modal-heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.modal-img {
+    width: 75px;
+    height: 100px;
+    
+}
+
+.control-limit-modal p{
+    font-size: 15px;
+}
