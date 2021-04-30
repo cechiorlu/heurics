@@ -11,7 +11,8 @@ import Workbench from '../../components/Workbench/Workbench'
 
 const initialState = {
     dragId: '',
-
+    dragSource: '',
+    dragIndex: '',
     toolboxControls: {
         arrowUp: {
             icon: ArrowUp,
@@ -64,6 +65,10 @@ function reducer(state, action) {
     switch (action.type) {
         case 'SET_DRAG_ID':
             return { ...state, dragId: action.dragId }
+        case 'SET_DRAG_SOURCE':
+            return { ...state, dragSource: action.dragSource }
+        case 'SET_DRAG_INDEX':
+            return { ...state, dragIndex: action.dragIndex }
         case 'SET_DROP_DEPTH':
             const scriptState = { ...state }
             scriptState.toolboxControls[scriptState.dragId].dropDepth = action.dropDepth

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SoundOn from '../../../assets/icons/SVG/Volume-on.svg'
 import SoundOff from '../../../assets/icons/SVG/Volume-off.svg'
-import GameMusic from '../../../assets/music/song.mp3'
+// import GameMusic from '../../../assets/music/song.mp3'
 import './Sound.css'
 
 function Sound() {
@@ -14,7 +14,7 @@ function Sound() {
                 className="sound-icon" alt="music"
             />
             <audio loop={true} autoPlay={true} muted={sound ? false : true}>
-                <source src={GameMusic} type="audio/mp3" />
+                {/* <source src={GameMusic} type="audio/mp3" /> */}
             </audio>
         </>
     )
