@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import _ from 'lodash'
 import { v4 } from 'uuid'
-import LimitModal from '../../ControlLimitModal/ControlLimitModal'
-import './BenchControls.css'
+import './Workbench.css'
+import Controls from './BenchControls/BenchControls';
+import BraceTool from './BraceControls/BraceControls';
+import LimitModal from '../ControlLimitModal/ControlLimitModal'
 
-function BenchControls({ data, dispatch }) {
+const Workbench = ({ data, dispatch }) => {
 
     // Control-limit modal --------------------------------
     const [modalOpen, setModalOpen] = useState(false)
@@ -16,32 +18,6 @@ function BenchControls({ data, dispatch }) {
         return () => clearTimeout(timer);
     }, [modalOpen]);
 
-
-    // workbench drag start ------------------------------------
-    const handleDragStart = (e) => {
-        e.stopPropagation()
-        e.dataTransfer.effectAllowed = 'copyMove'
-
-        e.dataTransfer.setData('text', e.target.id)
-        dispatch({ type: 'SET_DRAG_ID', dragId: e.target.id })
-        dispatch({ type: 'SET_DRAG_SOURCE', dragSource: e.target.parentElement.className })
-
-        // delete item on drag
-        let controls = data.benchControls
-        let index = _.findIndex(controls, function (o) { return o.id === e.target.id })
-
-        const dragItem = controls[index]
-        if (!dragItem.function) {
-            controls.splice(index, 1)
-            dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: controls })
-        }
-
-        // // set drag image --------------------------------------------------
-        // var img = new Image();
-        // img.src = data.icon;
-        // e.dataTransfer.setDragImage(img, 50, 30)
-
-    }
 
     // drag enter ------------------------------
     const handleDragEnter = e => {
@@ -91,15 +67,15 @@ function BenchControls({ data, dispatch }) {
         }
     };
 
-    // // drop --------------------------------
+    // drop --------------------------------
     const handleDrop = e => {
         e.preventDefault();
         e.stopPropagation();
 
         const getDropText = e.dataTransfer.getData('text')
-        let genericId = getDropText.split(' ')[0]
+        const genericId = getDropText.split(' ')[0]
         const dropItem = data.toolboxControls[genericId]
-        const updatedDropItem = { ...dropItem, id: genericId + ' ' + v4() }  //updates the id for workbench controls
+        const updatedDropItem = { ...dropItem, id: genericId + v4() }  //updates the id for workbench controls
         let benchList = data.benchControls
 
 
@@ -124,31 +100,31 @@ function BenchControls({ data, dispatch }) {
         // workbench sorting --------------------------------------
         if (data.dragSource === "bench-controls") {
 
-            // Get dragged item
-            genericId = data.dragId.split(' ')[0]
-        
+            // Get index of dragged item
+            const index1 = _.findIndex(benchList, function (o) { return o.id === data.dragId })
 
             // Get index(position) of dragged over item
             const index2 = _.findIndex(benchList, function (o) { return o.id === data.dragOver })
 
-            const index1 = index2 - 1
+            const index3 = index2 - 1
+            const wbDropItem = benchList[index1]
 
-            if (updatedDropItem) {
+            if (wbDropItem) {
                 let newBenchList = [...benchList]
-
+                
                 if (e.target.style['border-bottom'] !== '') {  // Insert drag element below curr hover;
 
                     e.target.style['border-bottom'] = ''
 
-                    newBenchList.splice(index2, 0, updatedDropItem)
-
+                    newBenchList.splice(index2, 0, wbDropItem)
+                    
                     dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: newBenchList })
 
                 } else {   // Insert drag element above curr hover
 
                     e.target.style['border-top'] = ''
 
-                    benchList.splice(index1, 0, updatedDropItem)
+                    benchList.splice(index3, 0, wbDropItem)
 
                     dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: newBenchList })
 
@@ -162,27 +138,25 @@ function BenchControls({ data, dispatch }) {
 
 
 
+
+
     return (
         <>
-            <div className="bench-controls"
+            <div className="workbench"
                 onDrop={e => handleDrop(e)}
                 onDragOver={e => handleDragOver(e)}
                 onDragEnter={e => handleDragEnter(e)}
                 onDragLeave={e => handleDragLeave(e)}>
 
-                {_.map(data.benchControls, (data, key) => {
-                    return (
-                        <img alt='' src={data.icon}
-                            className={`workbench-item grab`}
-                            id={`${data.id}`}
-                            key={key} draggable={true}
-                            onDragStart={e => handleDragStart(e)} />
-                    )
-                })}
-            </div >
+                <Controls controls={data.benchControls} location="workbench" dispatch={dispatch} />
+                <BraceTool>
+                    <Controls controls={data.braceControls} location="workbench-brace" />
+                </BraceTool>
+            </div>
             <LimitModal isOpen={modalOpen} />
         </>
     )
 }
 
-export default BenchControls
+
+export default Workbench

@@ -12,7 +12,7 @@ import Workbench from '../../components/Workbench/Workbench'
 const initialState = {
     dragId: '',
     dragSource: '',
-    dragIndex: '',
+    dragOver: '',
     toolboxControls: {
         arrowUp: {
             icon: ArrowUp,
@@ -67,16 +67,16 @@ function reducer(state, action) {
             return { ...state, dragId: action.dragId }
         case 'SET_DRAG_SOURCE':
             return { ...state, dragSource: action.dragSource }
-        case 'SET_DRAG_INDEX':
-            return { ...state, dragIndex: action.dragIndex }
-        case 'SET_DROP_DEPTH':
-            const scriptState = { ...state }
-            scriptState.toolboxControls[scriptState.dragId].dropDepth = action.dropDepth
-            return scriptState
-        case 'SET_IN_DROP_ZONE':
-            const spreadState = { ...state }
-            spreadState.toolboxControls[spreadState.dragId].inDropZone = action.inDropZone
-            return spreadState
+        case 'SET_DRAG_OVER':
+            return { ...state, dragOver: action.dragOver }
+        // case 'SET_DROP_DEPTH':
+        //     const scriptState = { ...state }
+        //     scriptState.toolboxControls[scriptState.dragId].dropDepth = action.dropDepth
+        //     return scriptState
+        // case 'SET_IN_DROP_ZONE':
+        //     const spreadState = { ...state }
+        //     spreadState.toolboxControls[spreadState.dragId].inDropZone = action.inDropZone
+        //     return spreadState
         case 'SET_BENCH_CONTROLS':
             return { ...state, benchControls: action.benchControls }
         case 'SET_BRACE_CONTROLS':

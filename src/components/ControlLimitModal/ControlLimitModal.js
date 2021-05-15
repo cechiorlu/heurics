@@ -1,5 +1,5 @@
 import React from 'react'
-import Roach from '../../../assets/images/dizzyroach.png'
+import Roach from '../../assets/images/dizzyroach.png'
 import './ControlLimitModal.css'
 
 
