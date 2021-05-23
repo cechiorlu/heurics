@@ -11,13 +11,14 @@ const Workbench = ({ data, dispatch }) => {
         e.preventDefault()
 
         dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: [] })
+        dispatch({ type: 'SET_BRACE_CONTROLS', braceControls: [] })
     }
 
     return (
         <div className="workbench">
             <BenchControls data={data} dispatch={dispatch} />
             <BraceControls data={data} dispatch={dispatch} />
-            <img src = {trash} alt="x" className="clear-list" width="25px" height= "25px" onClick = {e => clearList(e)}/> 
+            <img src={trash} alt="x" className="clear-list" width="22px" height="22px" onClick={e => clearList(e)} />
         </div>
     )
 }

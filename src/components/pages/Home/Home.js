@@ -4,14 +4,14 @@ import GameMenu from '../../GameMenu/GameMenu'
 import ScriptEditor from '../../../containers/ScriptEditor/ScriptEditor'
 import './Home.css'
 
-const Home = () => {
+const Home = ({ data, dispatch }) => {
     return (
         <div className="container">
             <div className="wrapper">
-                <Canvas />
-                <GameMenu />
+                <Canvas gameMode={data.gameMode} benchControls={data.benchControls} braceControls={data.braceControls} gameStart={data.gameStart} dispatch={dispatch} />
+                <GameMenu gameMode={data.gameMode} dispatch={dispatch} />
             </div>
-            <ScriptEditor />
+            <ScriptEditor data={data} dispatch={dispatch} />
         </div>
     )
 }

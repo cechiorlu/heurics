@@ -4,6 +4,7 @@ import { v4 } from 'uuid'
 import LimitModal from '../../ControlLimitModal/ControlLimitModal'
 import './BenchControls.css'
 
+
 function BenchControls({ data, dispatch }) {
 
     // Control-limit modal --------------------------------
@@ -31,10 +32,10 @@ function BenchControls({ data, dispatch }) {
         let index = _.findIndex(controls, function (o) { return o.id === e.target.id })
 
         const dragItem = controls[index]
-        if (!dragItem.function) {
-            controls.splice(index, 1)
-            dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: controls })
-        }
+        // if (!dragItem.function) {
+        //     controls.splice(index, 1)
+        //     dispatch({ type: 'SET_BENCH_CONTROLS', benchControls: controls })
+        // }
 
         // // set drag image --------------------------------------------------
         // var img = new Image();
@@ -126,7 +127,7 @@ function BenchControls({ data, dispatch }) {
 
             // Get dragged item
             genericId = data.dragId.split(' ')[0]
-        
+
 
             // Get index(position) of dragged over item
             const index2 = _.findIndex(benchList, function (o) { return o.id === data.dragOver })

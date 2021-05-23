@@ -1,0 +1,21 @@
+.grid {
+    width: 80%;
+    margin: auto;
+    height: 90%;
+    padding-top: 5%;
+}
+
+.row {
+    height: 37px;
+  }
+  
+  .cell {
+    width: 10%;
+    height: 37px;
+    outline: 1px solid rgb(134, 154, 189);
+    display: inline-block;
+  }
+  
+  .cell-location {
+      background-color: brown;
+  }

@@ -4,15 +4,14 @@ import Chickens from '../../assets/images/chickens.png'
 import './GameMenu.css'
 
 
-const GameMenu = () => {
+const GameMenu = ({ dispatch }) => {
 
-    function handleGameOption(e){
-        console.log(e.target.className)
-        if(e.target.classList.contains('option_1')){
-            alert('Treasure Hunt')
+    function handleGameOption(e) {
+        if (e.target.classList.contains('option_1')) {
+            dispatch({ type: 'SET_GAME_MODE', gameMode: 'treasure-hunt' })
         }
-        if(e.target.classList.contains('option_2')){
-            alert('Cross the Chickens')
+        if (e.target.classList.contains('option_2')) {
+            dispatch({ type: 'SET_GAME_MODE', gameMode: 'cross-chickens' })
         }
     }
 
@@ -22,7 +21,7 @@ const GameMenu = () => {
             <div className="game_options">
                 <div
                     className="treasure_hunt"
-                    onClick = {(e) => handleGameOption(e)}
+                    onClick={(e) => handleGameOption(e)}
                     style={{ backgroundImage: `url(${Map})`, height: 'auto' }}>
                     <div
                         className="treasure_hunt_img option_1">
@@ -31,7 +30,7 @@ const GameMenu = () => {
                 </div>
                 <div
                     className="cross_chickens"
-                    onClick ={(e) => handleGameOption(e)}
+                    onClick={(e) => handleGameOption(e)}
                     style={{ backgroundImage: `url(${Chickens})`, height: 'auto' }}>
                     <div className="cross_chickens_img option_2">
                         <h4 className="option_2">Cross the Chickens</h4>
